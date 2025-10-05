@@ -44,30 +44,32 @@ but it contains multiple syntax errors that prevent it from being parsed.
 // 🔍 Provided JSON File with Errors
 // ============================================
 
-const invalidBookingJSON = `
+const invalidBookingJSON = // variable deleted; no variable declarations in JSON
+//backtick deleted; no backticks in JSON
 {
   "hotelName": "Grand City Hotel",
-  "checkInDate": "2024-05-15"
+  "checkInDate": "2024-05-15", //comma added, to continue list
   "checkOutDate": "2024-05-20",
   "guests": [
     {
-      name: "Alice Johnson",
+      "name": "Alice Johnson", // double quotes added (name)
       "age": 30,
       "email": "alice.johnson@example.com"
     },
     {
       "name": "Bob Smith",
-      "age": undefined,
-      "email": "bob.smith@example"
+      "age": null, //undefined --> null (undefined not valid)
+      "email": "bob.smith@example.com"//".com" added to rectify the email
     }
   ],
-  "roomDetails": {
+    "roomDetails": {
     "type": "Suite",
     "pricePerNight": 200,
-    "amenities": ["WiFi", "Breakfast", "Parking",]
+    "amenities": ["WiFi", "Breakfast", "Parking"] //, deleted, hanging comma
   }
+  //backtick deleted; no backticks in JSON
 }
-`;
+//semi-colon deleted; no semicolons in JSON
 
 
 // ============================================
@@ -92,10 +94,19 @@ const invalidBookingJSON = `
 
 1️⃣ What tools or techniques did you use to identify the errors?
 
+I used Jsonlint.com and Code Beautify.
+
 2️⃣ How did you confirm that your corrected JSON file was valid?
+
+I kept making corrections using lesson knowledge and JSON error feedback.
 
 3️⃣ Which errors were the most difficult to spot? Why?
 
+The validator drew attention to each error, but before using that, I did not notice the missing ".com" from the email.
+
+That said, it also took me a minute to realize that I would have to add comment on one side while keeping them on the other in order to submit a repo (since the validators don't allow for comments).
+
 4️⃣ What strategies can help you avoid these kinds of errors in the future?
-   (e.g., syntax highlighting, linters, writing JSON by example)
+
+   I want to use a JSON validator to make sure my work is "computer perfect". But run it through JS Linter and Code Beautify because if I remember right one caught something that the other did not.
 */
