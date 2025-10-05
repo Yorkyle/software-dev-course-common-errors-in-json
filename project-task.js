@@ -44,7 +44,7 @@ but it contains multiple syntax errors that prevent it from being parsed.
 // 🔍 Provided JSON File with Errors
 // ============================================
 
-const invalidBookingJSON = // variable deleted; no variable declarations in JSON
+// variable deleted; no variable declarations in JSON
 //backtick deleted; no backticks in JSON
 {
   "hotelName": "Grand City Hotel",
